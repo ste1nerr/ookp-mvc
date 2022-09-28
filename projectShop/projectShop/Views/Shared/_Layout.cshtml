@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+  @await Html.PartialAsync("MetaTagsPartial")1
+
+    <!-- CSS
+    ================================================== -->
+  @await Html.PartialAsync("CssPartial")
+
+    <!-- script
+    ================================================== -->
+  @await Html.PartialAsync("ScriptsPartial")
+
+    <!-- favicons
+    ================================================== -->
+  @await Html.PartialAsync("FaviconsPartial")
+
+</head>
+
+<body id="top">
+
+
+    <!-- header
+    ================================================== -->
+   @await Html.PartialAsync("HeaderPartial")
+
+
+    <!-- featured 
+    ================================================== -->
+    @RenderBody()
+     @await Html.PartialAsync("BodyPartial")
+
+    <!-- s-footer
+    ================================================== -->
+  @await Html.PartialAsync("FooterPartial")
+
+
+  11
+
+</body>
+
+</html>

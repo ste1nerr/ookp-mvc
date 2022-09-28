@@ -1,0 +1,48 @@
+﻿@model OokpMVC.Models.AdminModel
+@{
+    ViewBag.Title = "Вхід";
+    if (ViewBag.IsLoginFailed == null) { ViewBag.IsLoginFailed = false; }
+}
+
+<div class="container py-3">
+    <div class="row align-content-center align-middle">
+        <div class="shadow-lg border border-primary bg-white p-4 col-md-6 offset-md-3 rounded">
+            <div class="container text-center align-content-center">
+                <h4 class="text-center align-content-center mb-4">
+                    Авторизація
+                </h4>
+            </div>
+            <div class="text-danger" style="@(ViewBag.IsLoginFailed ? "" : "display:none !important")">Введений неправильний логін або пароль!</div>
+            <form method="post" action="">
+                <div class="form-group my-2">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi-person-fill"></i>
+                        </span>
+                        <input class="form-control" type="text" placeholder="Введіть логін" aria-label="Введіть логін" id="LoginInput" name="Login"/>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi-lock-fill"></i>
+                        </span>
+                        <input class="form-control" placeholder="Введіть пароль" aria-label="Введіть пароль" id="PasswordInput" name="Password" type="password"/>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary w-100" type="submit" id="LoginButton">
+                            Увійти&ensp;
+                            <i class="bi-box-arrow-in-right"></i>
+                        </button>
+                        <a href="/Home/Registration" role="button" class="btn btn-success w-100">
+                            Реєстрація&ensp;
+                            <i class="bi-clipboard-check"></i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
